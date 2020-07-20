@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
-    <head>
-      <title>Example</title>
+
+  <head>
+      <title>Tic-Tac-Toe by TristanT</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <!-- Do not add `link` tags-->
@@ -10,8 +11,170 @@
       <!-- Do not add `script` tags-->
       <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
-    </head>
-    <body>
-      <h1>Browser Template</h1>
-    </body>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top">
+     <a class="navbar-brand">Tic Tac Toe</a>
+     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+       <span class="navbar-toggler-icon"></span>
+     </button>
+
+     <div class="collapse navbar-collapse" id="navbarSupportedContent">
+           <ul class="navbar-nav mr-auto">
+             <li class="nav-item my-1">
+               <span class="nav-link" id="user-message" style="color: white"></span>
+             </li>
+             <li>
+               <div class="my-1 mx-1 dropdown settings">
+                 <button class="btn btn-light dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                   Show Token
+                 </button>
+                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                   <span class="text-wrap" id="current-token"></span>
+                 </div>
+               </div>
+             </li>
+             <li>
+               <div class="my-1 mx-1 dropdown settings">
+                 <button class="btn btn-light dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="get-history-button">
+                   Show Stats
+                 </button>
+                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                   <span class="text-wrap" id="current-stats">Please wait for page to load history...</span>
+                 </div>
+               </div>
+             </li>
+             <li class="nav-item active sign-in-page my-1">
+               <div class="dropdown">
+                 <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButtonSignIn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                   Sign In
+                 </button>
+                 <div class="dropdown-menu">
+                   <form class="px-4 py-3" id="sign-in-and-new-game-form">
+                     <div class="form-group">
+                       <label for="exampleDropdownFormEmail1">Email address</label>
+                       <input required type="email" placeholder="Enter Email" name="credentials[email]" />
+                     </div>
+                     <div class="form-group">
+                       <label for="exampleDropdownFormPassword1">Password</label>
+                       <input required type="password" placeholder="Enter Password" name="credentials[password]" />
+                     </div>
+                     <div class="form-check">
+                       <input type="checkbox" class="form-check-input" id="dropdownCheckSignIn">
+                       <label class="form-check-label" for="dropdownCheck">
+                         Remember me
+                       </label>
+                     </div>
+                     <button type="submit" class="btn btn-primary">Sign In</button>
+                   </form>
+                 </div>
+               </div>
+             </li>
+             <li class="nav-item sign-in-page my-1">
+               <div class="dropdown">
+                 <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButtonSignUp" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                   Sign Up
+                 </button>
+                 <div class="dropdown-menu">
+                   <form class="px-4 py-3" id="sign-up-form">
+                     <div class="form-group">
+                       <label for="exampleDropdownFormEmail1">Email address</label>
+                       <input required type="email" placeholder="Enter Email" name="credentials[email]" />
+                     </div>
+                     <div class="form-group">
+                       <label for="exampleDropdownFormPassword1">Password</label>
+                       <input required type="password" placeholder="Enter Password" name="credentials[password]" />
+                     </div>
+                     <div class="form-group">
+                       <label for="exampleDropdownFormPassword1">Password</label>
+                       <input required type="password" placeholder="Enter Password Confirmation" name="credentials[password_confirmation]" />
+                     </div>
+                     <div class="form-check">
+                       <input type="checkbox" class="form-check-input" id="dropdownCheckSignUp">
+                       <label class="form-check-label" for="dropdownCheck">
+                         Remember me
+                       </label>
+                     </div>
+                     <button type="submit" class="btn btn-primary">Sign Up</button>
+                   </form>
+                 </div>
+               </div>
+             </li>
+             <li class="nav-item settings my-1">
+               <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButtonSignUp" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                 Change Password
+               </button>
+               <div class="dropdown-menu">
+                 <form class="px-4 py-3" id="change-password-form">
+                   <div class="form-group">
+                     <label for="exampleDropdownFormPassword1">Old Password</label>
+                     <input type="password" placeholder="Old Password" name="passwords[old]" />
+                   </div>
+                   <div class="form-group">
+                     <label for="exampleDropdownFormPassword1">New Password</label>
+                     <input type="password" placeholder="New Password" name="passwords[new]" />
+                   </div>
+                   <button type="submit" class="btn btn-primary">Change Password</button>
+                 </form>
+               </div>
+             </li>
+             <li class="nav-item settings my-1">
+               <button class="btn btn-light nav-link" id="new-game-button" style="color: black">New Game</button>
+             </li>
+             <li class="nav-item settings my-1">
+               <button class="btn btn-light nav-link" id="sign-out-button" style="color: black">Sign Out</button>
+             </li>
+           </ul>
+         </div>
+       </nav>
+
+       <h1 id="failure-feedback"></h1>
+
+       <div class="" id="game-page">
+         <div class="col-12 col-lg-6 col-xl-6" id="feedback-and-game-buttons">
+           <div class="col-12 p-0" id="feedback">
+             <h2 id="current-game"></h2>
+             <h2 id="current-player"></h2>
+             <h2 id="current-turn"></h2>
+             <h2 id="current-over"></h2>
+             <h2 id="game-state"></h2>
+           </div>
+
+           <div class="col-12 mt-5" id="game-buttons">
+             <form class="col-12 my-2" id="multiplayer-game-id-form">
+               <input class="game-button btn btn-primary col-12 p-0" id="previous-game-form-input" type="submit" value="Connect to Previous Game" />
+               <input required class="col-12 p-0" type="number" placeholder="Enter Previous Game ID" name="game[id]" />
+             </form>
+             <button class="game-button btn btn-primary col-12 my-2 p-0" id="get-games-button" value="Get Last 9 Games"> Get Last 9 Games </button>
+             <button class="game-button btn btn-primary col-12 my-2 p-0" id="get-last-game-button" value="Get Last Game"> Get A Previous Game </button>
+             <form class="col-12 my-2 p-0" id="secret-form">
+               <input required class="col-12 p-0" id="secret-word" type="text" placeholder="Type Something" name="secret" />
+               <input class="btn btn-primary game-button col-12 p-0" type="submit" value="Type the correct word and submit " />
+             </form>
+           </div>
+         </div>
+
+         <div class="col-12 col-lg-6 col-xl-6 p-0 mx-0" id="main-game">
+           <div class="p-0 my-5 justify-content-around flex-column" id="board-container-0">
+             <button class="game-button col-12 btn btn-primary btn-lg" id="undo-button">Undo</button>
+             <div class="d-inline-block">
+               <div class="row m-0" id="board-0"></div>
+             </div>
+             <h1 class="text-center" id="user-feedback"></h1>
+           </div>
+         </div>
+       </div>
+
+       <div class="get-games my-5 flex-wrap" id="get-games"></div>
+
+       <div class="d-flex flex-column justify-content-around" id="code-page">
+
+         <div class="p-0 my-5 mx-1 justify-content-center flex-wrap" id="demo-container">
+           <div class="m-2 p-0 flex-wrap" id="demo-board"></div>
+           <div class="d-flex flex-column align-items-start" id="demo-output"></div>
+         </div>
+
+
+</body>
 </html>
