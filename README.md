@@ -10,9 +10,8 @@ Simply go to <my link here>, sign up, and sign in.
 
 + HTML
 + CSS + SASS
-+ Javascript + jQuery
++ Javascript
 + Bootstrap
-+ highlight.js
 
 ## Planning and Development
 

@@ -1,19 +1,6 @@
 
 'use strict'
 
-// Description: This file contains a function checkForWinner() which finds
-// the winners of a tic tac toe for any size grid ie 3x3, 4x4, 9x9...
-// The recusive function checkLine checks if all elements in a line
-// are the same item and if true, pushes that value of the item
-// into an array winners. It has a recursive call that calls itself again
-// and changes the initial value by adding a jump which is the
-// value from one initial starting index to the next line of the same axis
-// array of 1D is stays as a 1D array with a 2D theoretical representation
-// [0, 1, 2, 3, 4, 5, 6, 7, 8] -->
-// ------------------------------> 0 1 2
-// ------------------------------> 3 4 5
-// ------------------------------> 6 7 8
-
 const store = require('../store')
 
 const checkForWinner = (board = store.game.cells) => {
