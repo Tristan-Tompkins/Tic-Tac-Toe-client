@@ -13,7 +13,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: stretch;
-  background: url("https://imgur.com/ECQLqcv");
+  background-image: url("https://res.cloudinary.com/ddsmdjlij/image/upload/v1595347012/WoW_backround_img_p2nqrh.jpg");
   background-size: cover;
 }
 
@@ -28,7 +28,7 @@ body {
 }
 
 .box {
-  background-color: rgba(0,255,0,.4);
+  background-color: rgba(64,224,208,.4);
   border: 1px solid $white;
   color: white;
   display: flex;
@@ -39,7 +39,7 @@ body {
   vertical-align: middle;
 
   &:hover {
-    background-color: rgba(0,255,0,.5);
+    background-color: rgba(64,224,208,.5);
   }
 }
 
@@ -68,7 +68,7 @@ button {
 }
 
 .container {
-  
+
 }
 
 #demo-board {
@@ -151,7 +151,10 @@ h3 {
   height: 5vh;
   color: black;
   font-size: 2vh;
-  background-color: rgba(108,122,137,1);
+  background-color: rgba(189,195,199,.5);
+  &:hover {
+    background-color: rgba(64,224,208,.5)
+  }
 }
 
 #game-page {
@@ -193,16 +196,16 @@ h3 {
 }
 
 .nav {
-  border: 5px solid black;
+  border: 1px solid black;
   text-align: center;
   display: block;
   color: white;
-  background-color: green;
-  height: 10vh;
+  background-color: rgba(108,122,137,1);
+  height: 5vh;
 
   & > * {
     text-align: center;
-    font-size: 8vh;
+    font-size: 7vh;
   }
 }
 
