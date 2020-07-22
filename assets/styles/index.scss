@@ -1,128 +1,25 @@
 @import '~bootstrap/scss/bootstrap';
-
-$body-bg-color: $gray-200;
-$third: calc(100%/3);
-
-html {
-  height: 100%;
-  box-sizing: border-box;
-}
+@import url('https://fonts.googleapis.com/css2?family=Germania+One&display=swap');
+$main-font: 'Germania One', cursive;
+$game-board-border: 1px solid white;
+$game-font: 'Germania One', cursive;
+$body-bg-color: rgba(189,195,199,.5);
 
 body {
-  background-color: $body-bg-color;
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-  background-image: url("https://res.cloudinary.com/ddsmdjlij/image/upload/v1595347012/WoW_backround_img_p2nqrh.jpg");
-  background-size: cover;
+    font-family: $main-font;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    background-image: url("https://res.cloudinary.com/ddsmdjlij/image/upload/v1595347012/WoW_backround_img_p2nqrh.jpg");
+    background-size: cover;
 }
-
-.big-button {
-  background-color: violet;
-  border-radius: 5%;
-  color: white;
-
-  &:hover {
-    color: black;
-  }
-}
-
-.box {
-  background-color: rgba(64,224,208,.4);
-  border: 1px solid $white;
-  color: white;
-  display: flex;
-  font-size: 5vh;
-  justify-content: center;
-  padding: 0;
-  text-align: center;
-  vertical-align: middle;
-
-  &:hover {
-    background-color: rgba(64,224,208,.5);
-  }
-}
-
-#board-container-0 {
-  height: 50vh;
-  text-align: center;
-  width: 50vh;
-}
-
-#board-0 {
-  align-self: center;
-  height: 50vh;
-  max-height: 95vw;
-  max-width: 95vw;
-  text-align: center;
-  width: 50vh;
-}
-
-button {
-  word-wrap: break-word;
-  color: white;
-}
-
-#buttons {
-  height: 100%;
-}
-
-.container {
-
-}
-
-#demo-board {
-  display: flex;
-}
-
-#demo-container {
-  width: 95vw;
-  display: flex;
-}
-
-#demo-output-title {
-  border-bottom: 5px solid white;
-  margin-bottom: 2vh;
-}
-
-.display {
-  max-width: 100vw;
-  max-height: 100vw;
-  width: 30vw;
-  height: 30vw;
-  margin: 1vw;
-  padding: 0;
-}
-
-.error {
-  display: flex;
-  color: red;
-  font-weight: bold;
-  height: 100px;
-  text-align: center;
-  background-color: white;
-}
-
-.error-toggle {
-  background-color: rgba(255,0,0,.5);
-  color: white;
-}
-
-#feedback {
-  & > h2 {
-    color: white;
-    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-  }
-}
-
 .footer {
   position: fixed;
   bottom: 0;
   left: 0;
-  background-color: black;
+  background-color: rgba(52,58,64,1);
   color: white;
   width: 100vw;
-
   & > * {
     text-align: center;
     text-decoration: none;
@@ -130,254 +27,161 @@ button {
   }
 
   & > *:hover {
-    color: blue;
+    color: skyblue;
     text-decoration: none;
     cursor: pointer;
   }
 }
-
-h1 {
-  color: white;
-  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+.error {
+    display: flex;
+    color: red;
+    font-weight: bold;
+    height: 55px;
 }
-
-h3 {
-  color: white;
-  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-  font-size: 2vw;
-}
-
-.game-button {
-  height: 5vh;
-  color: black;
-  font-size: 2vh;
-  background-color: rgba(189,195,199,.5);
-  &:hover {
-    background-color: rgba(64,224,208,.5)
-  }
-}
-
-#game-page {
-  display: flex;
-}
-
-.get-games {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-
-  & > * {
-    margin: 5%;
-    flex-wrap: wrap;
-  }
-}
-
-#game-page {
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-}
-
-#feedback-and-game-buttons {
-  width: 50vw;
-}
-
-#main-game {
-  display: flex;
-  flex-direction: row;
-  width: 50vw;
-  justify-content: space-around;
-}
-
-.mini-board {
-  text-align: center;
-  align-items: center;
-  width: (100%/3);
-}
-
-.nav {
-  border: 1px solid black;
-  text-align: center;
-  display: block;
-  color: white;
-  background-color: rgba(108,122,137,1);
-  height: 5vh;
-
-  & > * {
-    text-align: center;
-    font-size: 7vh;
-  }
-}
-
-#navbar-text {
-  color: white;
-}
-
+// Changing background color based off main game color for navbar
 .navbar {
-  background-color: rgba(108,122,137,1);
-  border-color: transparent;
+    .navbar-nav .nav-item {
+        margin: auto 10px;
+        :hover {
+            color: rgba(108,122,137,1);
+        }
+    }
+    .dropdown-menu {
+
+        .games-played {
+            text-align: center;
+            font-size: 0.8rem;
+        }
+        .nav-item {
+            :hover {
+
+            }
+        }
+    }
+    //  .navbar-toggler-icon {
+    //      background-image: url('../../public/images/icons/person-circle.svg');
+    // }
+}
+.btn-success {
+  background-color: rgba(30,144,255,1);
+  text: white;
+  &:hover {
+    background-color: rgba(20,134,245,1);
+  }
+}
+.modal-header {
+  background-color: rgba(0,0,0,.5);
+  color: white;
+}
+.modal-body {
+  background-color: rgba(0,0,0,.5);
   color: white;
 }
 
-.nav-item {
-  margin: 0 1vw;
-  cursor: pointer;
+// Resizing jumbotron to fit nicer with navbar.  Also changing color based off main bg color
+.jumbotron {
+    background-color:$body-bg-color;
+    max-height: calc(20vh);
+    margin-top: 25px;
+    border-radius: 25px;
 }
-
-.row {
-  height: 100%;
-  border: 0;
-  padding: 0;
+.games-played{
+  color: black;
+  text-align: center;
+  font-size: 35px;
 }
-
-.game-selector {
-  height: 5vh;
-}
-
-#undo-button {
-  max-width: 50vh;
-}
-@media (max-width: 960px) {
-  #board-container-0 {
-    height: 75vw;
-    width: 75vw;
-  }
-
-  #feedback-and-game-buttons {
-    width: 80vw;
-  }
-
-  #main-game {
-    width: 80vw;
-  }
-
-  #board-0 {
-    max-height: 95vw;
-    max-width: 95vw;
-    text-align: center;
-  }
-
-  .board-container {
-    max-height: calc(100%/3);
-    max-width: calc(100%/3);
-  }
-
-  .display {
-    width: 30vw;
-    height: 30vw;
-  }
-
-  .get-games {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  .mini-board {
-    text-align: center;
-    align-items: center;
-    width: 100%;
+.btn-sm{
+  color: white;
+  &:hover {
+    color: blue;
   }
 }
-@media (max-width: 850px) {
-  #code {
-    display: none;
-  }
-
-  #board-0 {
-    max-height: 95vw;
-    max-width: 95vw;
-    text-align: center;
-  }
-
-  .mini-board {
-    text-align: center;
-    align-items: center;
-    width: 100%;
-  }
+#horde {
+  color: red;
 }
-@media (max-width: 720px) {
-  #board-container-0 {
-    height: 95vw;
-    width: 95vw;
-    text-align: center;
-  }
-
-  .mini-board {
-    text-align: center;
-    align-items: center;
-    width: 100%;
-  }
-
-  #feedback-and-game-buttons {
-    width: 80vw;
-  }
-
-  #main-game {
-    width: 80vw;
-  }
-
-  .board-container {
-    max-height: calc(200%/3);
-    max-width: calc(200%/3);
-  }
-
-  .demo-container {
-    max-height: calc(200%/3);
-    max-width: calc(200%/3);
-  }
-
-  .display {
-    width: 50vw;
-    height: 50vw;
-  }
-
-  .get-games {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
+#alli {
+  color: blue;
 }
-@media (max-width: 576px) {
-  #board-container-0 {
-    max-height: 95vw;
-    max-width: 95vw;
-    text-align: center;
-  }
 
-  #board-0 {
-    max-height: 95vw;
-    max-width: 95vw;
-    text-align: center;
-  }
+// Adjusting card width to look nicer
+.card {
+    max-width: 80vh;
+    background: $body-bg-color;
+}
 
-  #feedback-and-game-buttons {
-    width: 80vw;
-  }
+form {
+    margin: auto;
+    width: calc(65%);
+}
+.form-group input {
+  text-align: center;
+}
 
-  #main-game {
-    width: 80vw;
-  }
-
-  .board-container {
-    max-height: 100%;
-    max-width: 100%;
-  }
-
-  .display {
-    width: 90vw;
-    height: 90vw;
-  }
-
-  .mini-board {
-    text-align: center;
-    align-items: center;
-    width: 100%;
-  }
-
-  .get-games {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
+// Sizing the game board container
+.game-board-view.container {
+    height: 50vh;
+    flex-direction: row;
+    width: 70vh;
+    justify-content: space-around;
+}
+// Filling up game board and setting default background color
+.game-board {
+    margin: auto;
+    background-color: rgba(189,195,199,.4);
+    max-height: calc(100vh);
+    max-width: calc(100vh);
+    // Creating box sizes to fit game board, font and alignment
+    .box {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: calc(100% / 3);
+        text-align: center;
+        font-size: 10vh;
+        font-family: $game-font;
+        text-shadow: 2px 2px black;
+        user-select: none;
+        &:hover {
+            background-color: rgba(189,195,199,.4);
+        }
+    }
+}
+@keyframes type {
+    from {
+        font-size: 0vh;
+        opacity: 0.75;
+    }
+    to {
+        font-size: 10vh;
+        opacity: 1;
+    }
+}
+// Media queries for different sized screens.
+@media (max-width: 600px) {
+    .jumbotron {
+        margin-top: 30px;
+        max-height: calc(20vh);
+        h1 {
+            font-size: 4vh;
+        }
+    }
+}
+@media (max-width: 450px) {
+    .jumbotron {
+        margin-top: 30px;
+        max-height: calc(20vh);
+        h1 {
+            font-size: 4vh;
+        }
+        p {
+            font-size: 3vh;
+        }
+    }
+    .card {
+        max-width: 40vh;
+    }
+    form {
+        margin: auto;
+        width: 100%;
+    }
 }

@@ -12,165 +12,165 @@
       <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
   </head>
-
   <body>
-    <nav class="navbar navbar-expand-lg navbar-light sticky-top">
-     <a class="navbar-brand">Tic Tac Toe</a>
-     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-       <span class="navbar-toggler-icon"></span>
-     </button>
-
-     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-           <ul class="navbar-nav mr-auto">
-             <li class="nav-item my-1">
-               <span class="nav-link" id="user-message" style="color: white"></span>
-             </li>
-             <li>
-               <div class="my-1 mx-1 dropdown settings">
-                 <button class="btn btn-light dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                   Show Token
-                 </button>
-                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                   <span class="text-wrap" id="current-token"></span>
-                 </div>
-               </div>
-             </li>
-             <li>
-               <div class="my-1 mx-1 dropdown settings">
-                 <button class="btn btn-light dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="get-history-button">
-                   Show Stats
-                 </button>
-                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                   <span class="text-wrap" id="current-stats">Please wait for page to load history...</span>
-                 </div>
-               </div>
-             </li>
-             <li class="nav-item active sign-in-page my-1">
-               <div class="dropdown">
-                 <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButtonSignIn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                   Sign In
-                 </button>
-                 <div class="dropdown-menu">
-                   <form class="px-4 py-3" id="sign-in-and-new-game-form">
-                     <div class="form-group">
-                       <label for="exampleDropdownFormEmail1">Email address</label>
-                       <input required type="email" placeholder="Enter Email" name="credentials[email]" />
-                     </div>
-                     <div class="form-group">
-                       <label for="exampleDropdownFormPassword1">Password</label>
-                       <input required type="password" placeholder="Enter Password" name="credentials[password]" />
-                     </div>
-                     <div class="form-check">
-                       <input type="checkbox" class="form-check-input" id="dropdownCheckSignIn">
-                       <label class="form-check-label" for="dropdownCheck">
-                         Remember me
-                       </label>
-                     </div>
-                     <button type="submit" class="btn btn-primary">Sign In</button>
-                   </form>
-                 </div>
-               </div>
-             </li>
-             <li class="nav-item sign-in-page my-1">
-               <div class="dropdown">
-                 <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButtonSignUp" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                   Sign Up
-                 </button>
-                 <div class="dropdown-menu">
-                   <form class="px-4 py-3" id="sign-up-form">
-                     <div class="form-group">
-                       <label for="exampleDropdownFormEmail1">Email address</label>
-                       <input required type="email" placeholder="Enter Email" name="credentials[email]" />
-                     </div>
-                     <div class="form-group">
-                       <label for="exampleDropdownFormPassword1">Password</label>
-                       <input required type="password" placeholder="Enter Password" name="credentials[password]" />
-                     </div>
-                     <div class="form-group">
-                       <label for="exampleDropdownFormPassword1">Password</label>
-                       <input required type="password" placeholder="Enter Password Confirmation" name="credentials[password_confirmation]" />
-                     </div>
-                     <div class="form-check">
-                       <input type="checkbox" class="form-check-input" id="dropdownCheckSignUp">
-                       <label class="form-check-label" for="dropdownCheck">
-                         Remember me
-                       </label>
-                     </div>
-                     <button type="submit" class="btn btn-primary">Sign Up</button>
-                   </form>
-                 </div>
-               </div>
-             </li>
-             <li class="nav-item settings my-1">
-               <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButtonSignUp" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                 Change Password
-               </button>
-               <div class="dropdown-menu">
-                 <form class="px-4 py-3" id="change-password-form">
-                   <div class="form-group">
-                     <label for="exampleDropdownFormPassword1">Old Password</label>
-                     <input type="password" placeholder="Old Password" name="passwords[old]" />
-                   </div>
-                   <div class="form-group">
-                     <label for="exampleDropdownFormPassword1">New Password</label>
-                     <input type="password" placeholder="New Password" name="passwords[new]" />
-                   </div>
-                   <button type="submit" class="btn btn-primary">Change Password</button>
-                 </form>
-               </div>
-             </li>
-             <li class="nav-item settings my-1">
-               <button class="btn btn-light nav-link" id="new-game-button" style="color: black">New Game</button>
-             </li>
-             <li class="nav-item settings my-1">
-               <button class="btn btn-light nav-link" id="sign-out-button" style="color: black">Sign Out</button>
-             </li>
+    <!-- Nav bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+      <span class="navbar-brand">Tic-Tac-Toe</span>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+      <button class='btn btn-sm logged-in change-password change-password-button' role="button">Change
+       Password</button>
+      </button>
+      <button class='btn btn-sm logged-in logout-button' role="button">Logout</button>
+   <div class="collapse navbar-collapse" id="navbarNav">
+     <ul class="navbar-nav mr-auto">
+       <li>
+         <span class='games-played logged-in d-lg-none'></span>
+       </li>
+       <li class="nav-item d-lg-none">
+         <a class='nav-link logged-in restart' role="button">Restart</a>
+       </li>
+       <li class="nav-item d-lg-none">
+         <a class='nav-link logged-in change-password change-password-button' role="button">Change Password</a>
+       </li>
+       <li class="nav-item d-lg-none">
+         <a class='nav-link logged-in logout-button' role="button">Logout</a>
+       </li>
+       <li>
+         <!-- <div class='dropdown d-none d-lg-block'>
+           <a class="btn dropdown-toggle logged-in" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
+             aria-haspopup="true" aria-expanded="false">
+           </a>
+            <ul class='dropdown-menu'>
+             <div class="dropdown-divider"></div>
+             <li class="nav-item">
+               <a class='nav-link restart' role="button">Restart</a>
+             </li> -->
+           </li>
            </ul>
          </div>
-       </nav>
+       </li>
+     </ul>
+   </div>
+ </nav>
 
-       <h1 id="failure-feedback"></h1>
+ <!-- Info -->
+ <div class='games-played logged-in'></div>
+ <div class="container">
+   <div class="jumbotron jumbotron-fluid text-center">
+     <h1 class=''>Welcome to Tic-Tac-Toe!</h1>
+     <h3>Your class tic-tac-toe game. Pick a side Horde(<span id="horde">O</span>) or the Alliance(<span id="alli">X</span>)!
+     <!-- <br> -->
+     <p class='' id='message'></p>
+   </div>
+ </div>
 
-       <div class="" id="game-page">
-         <div class="col-12 col-lg-6 col-xl-6" id="feedback-and-game-buttons">
-           <div class="col-12 p-0" id="feedback">
-             <h2 id="current-game"></h2>
-             <h2 id="current-player"></h2>
-             <h2 id="current-turn"></h2>
-             <h2 id="current-over"></h2>
-             <h2 id="game-state"></h2>
-           </div>
 
-           <div class="col-12 mt-5" id="game-buttons">
-             <form class="col-12 my-2" id="multiplayer-game-id-form">
-             </form>
-            <button class="game-button btn btn-primary col-12 my-2 p-0" id="get-last-game-button" value="Get Last Game"> Get A Previous Game </button>
-           </div>
-         </div>
+ <!-- Signup view -->
+ <div class='signup-view container'>
+   <form id='signup'>
+     <div class="form-group">
+       <label for="signup-email">Email</label>
+       <input type="email" class="form-control" name="credentials[email]"
+         placeholder="Please enter your email address">
+     </div>
+     <div class="form-group">
+       <label for="signup-password">Password</label>
+       <input type="password" class="form-control" name="credentials[password]"
+         placeholder="Please enter your password">
+     </div>
+     <div class="form-group">
+       <label for="signup-password">Confirm Password</label>
+       <input type="password" class="form-control" name="credentials[password_confirmation]"
+         placeholder="Please re-enter your password">
+     </div>
+     <button type="submit" class="btn btn-dark">Sign up!</button>
+     <a class="btn btn-sm btn-outline-info" id='signin-button' role="button">Already have a login</a>
+   </form>
+ </div>
 
-         <div class="col-12 col-lg-6 col-xl-6 p-0 mx-0" id="main-game">
-           <div class="p-0 my-5 justify-content-around flex-column" id="board-container-0">
-             <button class="game-button col-12 btn btn-primary btn-lg" id="undo-button">Undo</button>
-             <div class="d-inline-block">
-               <div class="row m-0" id="board-0"></div>
-                  <div class="col-4 box " data-cell-index="0" style="width: 134.333px; height: 132.328px;"></div>
-                  <div class="col-4 box " data-cell-index="1" style="width: 134.333px; height: 132.328px;"></div>
-                  <div class="col-4 box " data-cell-index="2" style="width: 134.333px; height: 132.328px;"></div>
-                  <div class="col-4 box " data-cell-index="3" style="width: 134.333px; height: 132.328px;"></div>
-                  <div class="col-4 box " data-cell-index="4" style="width: 134.333px; height: 132.328px;"></div>
-                  <div class="col-4 box " data-cell-index="5"   style="width: 134.333px; height: 132.328px;"></div>
-                  <div class="col-4 box " data-cell-index="6" style="width: 134.333px; height: 132.328px;"></div>
-                  <div class="col-4 box " data-cell-index="7" style="width: 134.333px; height: 132.328px;"></div>
-                  <div class="col-4 box " data-cell-index="8" style="width: 134.333px; height: 132.328px;"></div>
-                </div>
-              </div>
-             <h1 class="text-center" id="user-feedback"></h1>
-           </div>
-         </div>
+ <!-- Signin view -->
+ <div class='signin-view container text-center'>
+   <form id='signin'>
+     <div class="form-group">
+       <label for="signin-email">Email</label>
+       <input type="text" class="form-control" name="credentials[email]" placeholder="Enter Email">
+     </div>
+     <div class="form-group">
+       <label for="signin-password">Password</label>
+       <input type="password" class="form-control" name="credentials[password]"
+         placeholder="Enter Password">
+     </div>
+     <button type="submit" class="btn btn-dark">Sign In!</button>
+     <a class="btn btn-light" id='signup-button' role="button">Sign Up!</a>
+   </form>
+ </div>
 
-       <div class="get-games my-5 flex-wrap" id="get-games"></div>
+ <!-- Change password view -->
+ <div class='change-password-view container'>
+   <form id='change-password'>
+     <div class="form-group">
+       <label for="old-password">Old Password</label>
+       <input type="password" class="form-control" name="passwords[old]" placeholder="Please enter your old password">
+     </div>
+     <div class="form-group">
+       <label for="new-password">New Password</label>
+       <input type="password" class="form-control" name="passwords[new]" placeholder="Please enter your new password">
+     </div>
+     <button type="submit" class="btn btn-primary">Change password</button>
+     <a class="btn btn-danger" id='cancel-change-button' role="button">Cancel</a>
+   </form>
+ </div>
 
-       <div class="d-flex flex-column justify-content-around" id="code-page">
+ <!-- New game question -->
+ <div class='card new-game container text-center' tabindex='-1' role='dialog'>
+   <div class='card-body'>
+     <h5 class='card-title'>Join the battle?</h5>
+     <a class="btn btn-success" id='start-game' role="button">Yes</a>
+     <a class="btn btn-danger" id='no-game' role="button">No</a>
+   </div>
+ </div>
+
+ <!-- Main game board -->
+ <div class="col-12 col-lg-6 col-xl-6  game-board-view container">
+   <div class='row game-board h-100'>
+
+     <div class='col-4 box top-row'></div>
+     <div class='col-4 box mid-col top-row'></div>
+     <div class='col-4 box top-row'></div>
+
+     <div class='col-4 box middle-row'></div>
+     <div class='col-4 box mid-col middle-row'></div>
+     <div class='col-4 box middle-row'></div>
+
+     <div class='col-4 box bottom-row'></div>
+     <div class='col-4 box mid-col bottom-row'></div>
+     <div class='col-4 box bottom-row'></div>
+   </div>
+ </div>
+
+ <!-- End of game modal -->
+ <div class="modal fade game-over-modal" tabindex="-1" role="dialog">
+   <div class="modal-dialog modal-dialog-centered">
+     <div class="modal-content">
+       <div class="modal-header">
+         <h4 class="col-12 modal-title text-center">Game Over</h5>
+         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+           <span aria-hidden="true">&times;</span>
+         </button>
+       </div>
+       <div class="col-12 modal-body text-center">
+         <p id='game-over-message'></p>
+       </div>
+      </div>
+     </div>
+   </div>
+ </div>
+ <div id="footer-links" class="footer d-flex justify-content-around">
+     <a id="github-link" href="https://github.com/Tristan-Tompkins/Tic-Tac-Toe-client" target="_blank">
+       <h2>Link to Github Repo</h2>
+     </a>
 
   </body>
 </html>
