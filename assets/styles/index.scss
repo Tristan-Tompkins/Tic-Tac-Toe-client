@@ -99,7 +99,10 @@ form {
 label {
   font-size: 25px;
 }
-
+.form-group input {
+    width: 80%;
+    margin: 0 auto;
+}
 // Sizing the game board container
 .game-board-view.container {
     height: 50vh;
