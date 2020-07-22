@@ -1,6 +1,6 @@
 # Tic Tac Toe!
 
-A online version of the class tic tac toe game! Play against yourself(for now >:)! Sign up and sign in are required to play; win detection and game statistics are provided for you.
+A online version of the class tic tac toe game (did you get it?!?!?) Play against yourself(for now >:)! Sign up and sign in are required to play; win detection and game statistics are provided for you.
 ## Getting Started
 
 Simply go to https://tristan-tompkins.github.io/Tic-Tac-Toe-client/, sign up, and sign in.
