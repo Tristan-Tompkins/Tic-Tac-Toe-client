@@ -81,17 +81,23 @@ body {
 
 // Adjusting card width to look nicer
 .card {
-    max-width: 80vh;
+    max-width: 30vh;
     background: $body-bg-color;
     border: 1px rgba(0,0,0,0)
 }
 
 form {
     margin: auto;
-    width: calc(65%);
+    width: calc(50%);
+    background-color: rgba(189,195,199,.5);
+    border-radius: 15px;
+    letter-spacing: 1px;
 }
 .form-group input {
   text-align: center;
+}
+label {
+  font-size: 25px;
 }
 
 // Sizing the game board container
