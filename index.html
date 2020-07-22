@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+      <title>Tic-Tac-Toe by Tristan.T</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Do not add `link` tags-->
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+      <!-- Do not add `script` tags-->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+  </head>
+  <body>
+    <!-- Nav bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+      <span class="navbar-brand">Tic-Tac-Toe</span>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+      <button class='btn btn-sm logged-in change-password change-password-button' role="button">Change
+       Password</button>
+      </button>
+      <button class='btn btn-sm logged-in logout-button' role="button">Logout</button>
+      <button class='btn btn-sm logged-in restart' role="button">New Game</button>
+   <div class="collapse navbar-collapse" id="navbarNav">
+     <ul class="navbar-nav mr-auto">
+       <li>
+         <span class='games-played logged-in d-lg-none'></span>
+       </li>
+       <li class="nav-item d-lg-none">
+         <button class='btn btn-sm logged-in restart' role="button">Restart</button>
+       </li>
+       <li class="nav-item d-lg-none">
+         <a class='nav-link logged-in change-password change-password-button' role="button">Change Password</a>
+       </li>
+       <li class="nav-item d-lg-none">
+         <a class='nav-link logged-in logout-button' role="button">Logout</a>
+       </li>
+       <li>
+       </li>
+     </ul>
+   </div>
+ </nav>
+
+ <!-- Info -->
+ <div class='games-played logged-in'></div>
+ <div class="container">
+   <div class="jumbotron jumbotron-fluid text-center">
+     <h1 class=''>Welcome to Tic-Tac-Toe!</h1>
+     <h3>Your class tic-tac-toe game. Pick a side Horde(<span id="horde">O</span>) or the Alliance(<span id="alli">X</span>)!
+     <!-- <br> -->
+     <p class='' id='message'></p>
+   </div>
+ </div>
+
+
+ <!-- Signup view -->
+ <div class='signup-view container text-center'>
+   <form id='signup'>
+     <div class="form-group">
+       <label for="signup-email">Email</label>
+       <input type="email" class="form-control" name="credentials[email]"
+         placeholder="Please enter your email address">
+     </div>
+     <div class="form-group">
+       <label for="signup-password">Password</label>
+       <input type="password" class="form-control" name="credentials[password]"
+         placeholder="Please enter your password">
+     </div>
+     <div class="form-group">
+       <label for="signup-password">Confirm Password</label>
+       <input type="password" class="form-control" name="credentials[password_confirmation]"
+         placeholder="Please re-enter your password">
+     </div>
+     <button type="submit" class="btn btn-dark">Sign up!</button>
+     <button class="btn btn-light" id='signin-button' role="button">Have a account?</button>
+   </form>
+ </div>
+
+ <!-- Signin view -->
+ <div class='signin-view container text-center'>
+   <form id='signin'>
+     <div class="form-group">
+       <label for="signin-email">Email</label>
+       <input type="text" class="form-control" name="credentials[email]" placeholder="Enter Email">
+     </div>
+     <div class="form-group">
+       <label for="signin-password">Password</label>
+       <input type="password" class="form-control" name="credentials[password]"
+         placeholder="Enter Password">
+     </div>
+     <button type="submit" class="btn btn-dark">Sign In!</button>
+     <a class="btn btn-light" id='signup-button' role="button">Sign Up!</a>
+   </form>
+ </div>
+
+ <!-- Change password view -->
+ <div class='change-password-view container text-center'>
+   <form id='change-password'>
+     <div class="form-group">
+       <label for="old-password">Old Password</label>
+       <input type="password" class="form-control" name="passwords[old]" placeholder="Please enter your old password">
+     </div>
+     <div class="form-group">
+       <label for="new-password">New Password</label>
+       <input type="password" class="form-control" name="passwords[new]" placeholder="Please enter your new password">
+     </div>
+     <button type="submit" class="btn btn-dark">Change password</button>
+     <a class="btn btn-light" id='cancel-change-button' role="button">Cancel</a>
+   </form>
+ </div>
+
+ <!-- New game question -->
+ <div class='card new-game container text-center' tabindex='-1' role='dialog'>
+   <div class='card-body'>
+     <h5 class='card-title'>Ready to join the battle?</h5>
+     <a class="btn btn-success" id='start-game' role="button">Yes</a>
+     <a class="btn btn-danger" id='no-game' role="button">No</a>
+   </div>
+ </div>
+
+ <!-- Main game board -->
+ <div class="col-12 col-lg-6 col-xl-6  game-board-view container">
+   <div class='row game-board h-100'>
+
+     <div class='col-4 box top-row'></div>
+     <div class='col-4 box mid-col top-row'></div>
+     <div class='col-4 box top-row'></div>
+
+     <div class='col-4 box middle-row'></div>
+     <div class='col-4 box mid-col middle-row'></div>
+     <div class='col-4 box middle-row'></div>
+
+     <div class='col-4 box bottom-row'></div>
+     <div class='col-4 box mid-col bottom-row'></div>
+     <div class='col-4 box bottom-row'></div>
+   </div>
+ </div>
+
+ <!-- End of game modal -->
+ <div class="modal fade game-over-modal" tabindex="-1" role="dialog">
+   <div class="modal-dialog modal-dialog-centered">
+     <div class="modal-content">
+       <div class="modal-header">
+         <h4 class="col-12 modal-title text-center">Game Over</h5>
+         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+           <span aria-hidden="true">&times;</span>
+         </button>
+       </div>
+       <div class="col-12 modal-body text-center">
+         <p id='game-over-message'></p>
+       </div>
+      </div>
+     </div>
+   </div>
+ </div>
+ <div id="footer-links" class="footer d-flex justify-content-around">
+     <a id="github-link" href="https://github.com/Tristan-Tompkins/Tic-Tac-Toe-client" target="_blank">
+       <h2>Link to Github Repo</h2>
+     </a>
+
+  </body>
+</html>

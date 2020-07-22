@@ -1,0 +1,173 @@
+@import '~bootstrap/scss/bootstrap';
+@import url('https://fonts.googleapis.com/css2?family=Germania+One&display=swap');
+$main-font: 'Germania One', cursive;
+$game-board-border: 1px solid white;
+$body-bg-color: rgba(189,195,199,.5);
+
+body {
+    font-family: $main-font;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    background-image: url("https://res.cloudinary.com/ddsmdjlij/image/upload/v1595347012/WoW_backround_img_p2nqrh.jpg");
+    background-size: cover;
+}
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(52,58,64,1);
+  color: white;
+  width: 100vw;
+  font-size: 10px;
+  & > * {
+    text-align: center;
+    text-decoration: none;
+    color: white;
+  }
+
+  & > *:hover {
+    color: skyblue;
+    text-decoration: none;
+    cursor: pointer;
+  }
+}
+.error {
+    display: flex;
+    color: red;
+    font-weight: bold;
+    height: 55px;
+}
+.btn-success {
+  background-color: rgba(30,144,255,1);
+  text: white;
+  &:hover {
+    background-color: rgba(20,134,245,1);
+  }
+}
+.modal-header {
+  background-color: rgba(0,0,0,.5);
+  color: white;
+}
+.modal-body {
+  background-color: rgba(0,0,0,.5);
+  color: white;
+}
+
+// Resizing jumbotron to fit nicer with navbar.  Also changing color based off main bg color
+.jumbotron {
+    background-color:$body-bg-color;
+    max-height: calc(20vh);
+    margin-top: 25px;
+    border-radius: 25px;
+}
+.games-played{
+  color: black;
+  text-align: center;
+  font-size: 35px;
+}
+.btn-sm{
+  color: white;
+  &:hover {
+    color: blue;
+  }
+}
+#horde {
+  color: red;
+}
+#alli {
+  color: blue;
+}
+
+// Adjusting card width to look nicer
+.card {
+    max-width: 30vh;
+    background: $body-bg-color;
+    border: 1px rgba(0,0,0,0)
+}
+
+form {
+    margin: auto;
+    width: calc(50%);
+    background-color: rgba(189,195,199,.5);
+    border-radius: 15px;
+    letter-spacing: 1px;
+}
+.form-group input {
+  text-align: center;
+}
+label {
+  font-size: 25px;
+}
+.form-group input {
+    width: 80%;
+    margin: 0 auto;
+}
+// Sizing the game board container
+.game-board-view.container {
+    height: 50vh;
+    flex-direction: row;
+    width: 70vh;
+    justify-content: space-around;
+}
+// Filling up game board and setting default background color
+.game-board {
+    margin: auto;
+    background-color: rgba(189,195,199,.4);
+    max-height: calc(100vh);
+    max-width: calc(100vh);
+    // Creating box sizes to fit game board, font and alignment
+    .box {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: calc(100% / 3);
+        text-align: center;
+        font-size: 10vh;
+        font-family: $main-font;
+        text-shadow: 2px 2px black;
+        user-select: none;
+        &:hover {
+            background-color: rgba(189,195,199,.4);
+        }
+    }
+}
+@keyframes type {
+    from {
+        font-size: 0vh;
+        opacity: 0.75;
+    }
+    to {
+        font-size: 10vh;
+        opacity: 1;
+    }
+}
+// Media queries for different sized screens.
+@media (max-width: 600px) {
+    .jumbotron {
+        margin-top: 30px;
+        max-height: calc(20vh);
+        h1 {
+            font-size: 4vh;
+        }
+    }
+}
+@media (max-width: 450px) {
+    .jumbotron {
+        margin-top: 30px;
+        max-height: calc(20vh);
+        h1 {
+            font-size: 4vh;
+        }
+        p {
+            font-size: 3vh;
+        }
+    }
+    .card {
+        max-width: 40vh;
+    }
+    form {
+        margin: auto;
+        width: 100%;
+    }
+}
