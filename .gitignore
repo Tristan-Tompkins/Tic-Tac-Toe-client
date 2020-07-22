@@ -102,9 +102,7 @@ jspm_packages
 
 tmp
 dist
-vendor.js
 specs.js
-application.js
 _SpecRunner.html
 *.woff2
 *.woff
