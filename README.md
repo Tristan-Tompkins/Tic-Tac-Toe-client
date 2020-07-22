@@ -10,7 +10,7 @@ Simply go to <my link here>, sign up, and sign in.
 
 + HTML
 + CSS + SASS
-+ Javascript
++ Javascript + jQuery
 + Bootstrap
 
 ## Planning and Development
@@ -31,18 +31,15 @@ Planning:
 5. Refactor into smaller files, more folders
 6. Build game logic
 7. Refactor game logic
-8. Refactor client-side files
-9. Add secrets
 10. Add view onPageLoad handlers
 11. Refactor game logic into its own folder
 12. Add bootstrap navbar, nav dropdowns
 13. Refactor into smaller files, more folders
-14. Add logic Demonstration
 15. Receive feedback and update
 16. Fill in ReadME
 
 #### Initial wireframes and user stories
-##### [Desktop wireframe]()
+##### [Desktop wireframe](https://res.cloudinary.com/ddsmdjlij/image/upload/v1595382665/Wireframe_tbsnjp.jpg)
 
 1. As a user, I want to sign up.
 2. As a user, I want to sign in.
@@ -60,3 +57,7 @@ Planning:
 2. Take a break after certain amount of time regardless of progress.
 3. Write down diagrams if stuck.
 4. Explain code to peers for different approaches to solve the problem.
+
+###Future Plans
+
+In the future I would like to add some additional SCSS to make it more appealing to the user. Add a theme selector for the different races of the WoW game letting thee user choose. Also allow the an Ai that the user can interact with. Adding additional features such a history of games and a multiplayer aspect with leaderboards.
