@@ -4,7 +4,7 @@ A online version of the class tic tac toe game! Play against someone at the same
 
 ## Getting Started
 
-Simply go to <my link here>, sign up, and sign in.
+Simply go to https://tristan-tompkins.github.io/Tic-Tac-Toe-client/, sign up, and sign in.
 
 ## Technologies used
 

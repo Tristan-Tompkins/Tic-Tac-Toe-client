@@ -23,13 +23,14 @@
        Password</button>
       </button>
       <button class='btn btn-sm logged-in logout-button' role="button">Logout</button>
+      <button class='btn btn-sm logged-in restart' role="button">New Game</button>
    <div class="collapse navbar-collapse" id="navbarNav">
      <ul class="navbar-nav mr-auto">
        <li>
          <span class='games-played logged-in d-lg-none'></span>
        </li>
        <li class="nav-item d-lg-none">
-         <a class='nav-link logged-in restart' role="button">Restart</a>
+         <button class='btn btn-sm logged-in restart' role="button">Restart</button>
        </li>
        <li class="nav-item d-lg-none">
          <a class='nav-link logged-in change-password change-password-button' role="button">Change Password</a>
@@ -38,18 +39,6 @@
          <a class='nav-link logged-in logout-button' role="button">Logout</a>
        </li>
        <li>
-         <!-- <div class='dropdown d-none d-lg-block'>
-           <a class="btn dropdown-toggle logged-in" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
-             aria-haspopup="true" aria-expanded="false">
-           </a>
-            <ul class='dropdown-menu'>
-             <div class="dropdown-divider"></div>
-             <li class="nav-item">
-               <a class='nav-link restart' role="button">Restart</a>
-             </li> -->
-           </li>
-           </ul>
-         </div>
        </li>
      </ul>
    </div>
@@ -68,7 +57,7 @@
 
 
  <!-- Signup view -->
- <div class='signup-view container'>
+ <div class='signup-view container text-center'>
    <form id='signup'>
      <div class="form-group">
        <label for="signup-email">Email</label>
@@ -86,7 +75,7 @@
          placeholder="Please re-enter your password">
      </div>
      <button type="submit" class="btn btn-dark">Sign up!</button>
-     <a class="btn btn-sm btn-outline-info" id='signin-button' role="button">Already have a login</a>
+     <button class="btn btn-light" id='signin-button' role="button">Have a account?</button>
    </form>
  </div>
 
@@ -126,7 +115,7 @@
  <!-- New game question -->
  <div class='card new-game container text-center' tabindex='-1' role='dialog'>
    <div class='card-body'>
-     <h5 class='card-title'>Join the battle?</h5>
+     <h5 class='card-title'>Ready to join the battle?</h5>
      <a class="btn btn-success" id='start-game' role="button">Yes</a>
      <a class="btn btn-danger" id='no-game' role="button">No</a>
    </div>

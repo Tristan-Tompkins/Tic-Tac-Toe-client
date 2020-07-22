@@ -2,7 +2,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Germania+One&display=swap');
 $main-font: 'Germania One', cursive;
 $game-board-border: 1px solid white;
-$game-font: 'Germania One', cursive;
 $body-bg-color: rgba(189,195,199,.5);
 
 body {
@@ -20,6 +19,7 @@ body {
   background-color: rgba(52,58,64,1);
   color: white;
   width: 100vw;
+  font-size: 10px;
   & > * {
     text-align: center;
     text-decoration: none;
@@ -37,30 +37,6 @@ body {
     color: red;
     font-weight: bold;
     height: 55px;
-}
-// Changing background color based off main game color for navbar
-.navbar {
-    .navbar-nav .nav-item {
-        margin: auto 10px;
-        :hover {
-            color: rgba(108,122,137,1);
-        }
-    }
-    .dropdown-menu {
-
-        .games-played {
-            text-align: center;
-            font-size: 0.8rem;
-        }
-        .nav-item {
-            :hover {
-
-            }
-        }
-    }
-    //  .navbar-toggler-icon {
-    //      background-image: url('../../public/images/icons/person-circle.svg');
-    // }
 }
 .btn-success {
   background-color: rgba(30,144,255,1);
@@ -107,6 +83,7 @@ body {
 .card {
     max-width: 80vh;
     background: $body-bg-color;
+    border: 1px rgba(0,0,0,0)
 }
 
 form {
@@ -138,7 +115,7 @@ form {
         min-height: calc(100% / 3);
         text-align: center;
         font-size: 10vh;
-        font-family: $game-font;
+        font-family: $main-font;
         text-shadow: 2px 2px black;
         user-select: none;
         &:hover {

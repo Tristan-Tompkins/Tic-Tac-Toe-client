@@ -16,13 +16,13 @@ const startNewGameFailue = function () {
 }
 
 const resetGameSuccess = function () {
-    $('#message').text('Battle been reset!').removeClass('error')
+    $('#message').text('New battle arises!').removeClass('error')
     $('.game-board-view, .restart').hide()
     $('.new-game').show()
 }
 
 const resetGameFailure = function () {
-    $('#message').text('Cant restart this battle!').addClass('error')
+    $('#message').text('Cant start this battle!').addClass('error')
 }
 
 // Player makes a move functions
@@ -45,7 +45,7 @@ const makeMoveSuccess = function (response) {
 }
 
 const makeMoveFailure = function () {
-    $('#message').text('Try another square!').addClass('error')
+    $('#message').text('Invaid square!').addClass('error')
 }
 
 // Clears the board visually

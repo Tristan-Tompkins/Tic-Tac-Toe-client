@@ -73,7 +73,7 @@ const onCellClick = function () {
             .catch(ui.makeMoveFailure)
     }
     else {
-        $('#message').text('Square taken.  Please pick another').addClass('error')
+        $('#message').text('Square taken. Pick another').addClass('error')
     }
 }
 
