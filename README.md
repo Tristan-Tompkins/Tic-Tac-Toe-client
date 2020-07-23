@@ -57,6 +57,6 @@ Planning:
 3. Write down diagrams if stuck.
 4. Explain code to peers for different approaches to solve the problem.
 
-###Future Plans
+##Future Plans
 
 In the future I would like to add some additional SCSS to make it more appealing to the user. Add a theme selector for the different races of the WoW game letting thee user choose. Also allow the an Ai that the user can interact with. Adding additional features such a history of games and a multiplayer aspect with leaderboards.
